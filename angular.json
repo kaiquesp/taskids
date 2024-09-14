@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "children-allowance": {
+    "taskids": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/children-allowance",
+            "outputPath": "dist/taskids",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "children-allowance:build:production"
+              "buildTarget": "taskids:build:production"
             },
             "development": {
-              "buildTarget": "children-allowance:build:development"
+              "buildTarget": "taskids:build:development"
             }
           },
           "defaultConfiguration": "development"
