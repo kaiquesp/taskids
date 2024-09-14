@@ -1,0 +1,106 @@
+  <div>
+    <div class="header">
+      <svg
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 16 16"
+        class="header-logo"
+        height="1em"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"
+        ></path>
+      </svg>
+      <h2 class="header-display-month-year">
+        {{ displayMonth }} {{ displayYear }}
+      </h2>
+      <div class="header-buttons">
+        <button
+          class="header-buttons-today-btn"
+          type="button"
+          (click)="setCurrentMonth()"
+        >
+          Hoje
+        </button>
+        <button
+          class="header-buttons-chevron-btn"
+          type="button"
+          (click)="decreaseMonth()"
+        >
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 1024 1024"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+            ></path>
+          </svg>
+        </button>
+        <button
+          class="header-buttons-chevron-btn"
+          type="button"
+          (click)="increaseMonth()"
+        >
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 1024 1024"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <table class="calendar-table" *ngIf="calendar">
+    <thead>
+      <tr>
+        <th *ngFor="let weekName of weekNames">{{ weekName }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of calendar | chunk : 7; let i = index">
+        <td
+          class="calendar-day"
+          [ngClass]="{ 'past-date': day.isPastDate, today: day.isToday }"
+          *ngFor="let day of row; let j = index"
+          (click)="getDate(day.date)"
+        >
+          <div
+            class="calendar-day-header"
+            [ngClass]="{ 'actual-date': day.isToday }"
+          >
+            <strong>{{ day.date.getDate() }}</strong>
+          </div>
+          <div
+            class="calendar-day-reminder"
+            *ngFor="let reminder of day.reminders"
+            [ngStyle]="{ 'background-color': reminder.color }"
+          >
+            {{ reminder.title }}
+          </div>
+          <!-- <app-calendar-modal [weather]="weather" [calendarModalKey]="day.date" [selectedDay]="selectedDay"
+            [showWeather]="showWeather" [selectedWeek]="selectedWeek" [selectedYear]="selectedYear"
+            [selectedMonth]="selectedMonth" [reminderTime]="reminderTime" [reminderCityName]="reminderCityName"
+            [reminderDescription]="reminderDescription" [reminderTitle]="reminderTitle" [reminderColor]="reminderColor"
+            (handleGetCity)="handleGetCity($event)" (handleSave)="handleSave($event)"
+            (clearForm)="clearForm()"></app-calendar-modal> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>

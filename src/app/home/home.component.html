@@ -1,0 +1,12 @@
+<app-header></app-header>
+
+<app-calendar (dateResponse)="dateResponse($event)"></app-calendar>
+
+  @for(el of tasks$ | async; track el) {
+    <div class="card mb-3">
+      <div class="card-body">
+        <i class="bi bi-list-task"></i> {{ el.rule }}
+        <button type="button" class="btn float-end" [ngClass]="false ? 'btn-success' : 'btn-danger'"><i class="bi bi-check-circle-fill" [ngClass]="true ? 'bi-patch-check' : 'bi-patch-exclamation'"></i></button>
+      </div>
+    </div>
+    }

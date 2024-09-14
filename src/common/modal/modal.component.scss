@@ -1,0 +1,29 @@
+.modal {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  height: 100vh;
+  display: flex;
+  cursor: default;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  width: 20vw;
+  border-radius: 5px;
+  position: relative;
+  background-color: #fff;
+}
+
+.close-button {
+  top: -1px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 26px;
+  color: #ff0073;
+  position: absolute;
+}
