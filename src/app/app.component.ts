@@ -14,5 +14,5 @@ import { HeaderComponent } from './shared/header/header.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'Mesada infantil';
+  title = 'taskids';
 }

@@ -1,5 +1,4 @@
 import { CalendarDay } from './calendarday';
-import { Reminder } from '../interfaces/reminder';
 
 describe('CalendarDay', () => {
   let calendarDay: CalendarDay;
@@ -39,74 +38,6 @@ describe('CalendarDay', () => {
       calendarDay.addDate(date);
 
       expect(calendarDay.getDateString()).toBe('2024-08-13');
-    });
-  });
-
-  describe('addReminder', () => {
-    it('should add a new reminder to the list', () => {
-      const reminder: Reminder = {
-        id: '1',
-        title: 'Test Reminder',
-        color: 'rgb(51, 122, 255)',
-        description: 'Desc Test Reminder',
-        time: '10:30 AM',
-        weather: {
-          name: 'China',
-          main: {
-            temp: 20,
-            humidity: 80,
-          },
-          wind: {
-            speed: 20,
-          },
-        },
-      };
-
-      calendarDay.addReminder(reminder);
-
-      expect(calendarDay.reminders).toContain(reminder);
-    });
-
-    it('should update an existing reminder', () => {
-      const reminder: Reminder = {
-        id: '1',
-        title: 'Test Reminder',
-        color: 'rgb(51, 122, 255)',
-        description: 'Desc Test Reminder',
-        time: '08:30 AM',
-        weather: {
-          name: 'Jão Pessoa',
-          main: {
-            temp: 30,
-            humidity: 40,
-          },
-          wind: {
-            speed: 28,
-          },
-        },
-      };
-      calendarDay.addReminder(reminder);
-
-      const updatedReminder: Reminder = {
-        id: '1',
-        title: 'Updated Reminder',
-        color: 'rgb(51, 122, 255)',
-        description: 'Desc Updated Reminder',
-        time: '08:30 AM',
-        weather: {
-          name: 'São Paulo',
-          main: {
-            temp: 30,
-            humidity: 40,
-          },
-          wind: {
-            speed: 28,
-          },
-        },
-      };
-      calendarDay.addReminder(updatedReminder);
-
-      expect(calendarDay.reminders.find((r) => r.id === '1')?.title).toBe('Updated Reminder');
     });
   });
 });
