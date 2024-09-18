@@ -37,7 +37,7 @@ describe('CalendarDay', () => {
       const date = new Date('2024-08-14T00:00:00Z'); // Use ISO format with timezone
       calendarDay.addDate(date);
 
-      expect(calendarDay.getDateString()).toBe('2024-08-13');
+      expect(calendarDay.getDateString()).toBe('2024-08-14');
     });
   });
 });
