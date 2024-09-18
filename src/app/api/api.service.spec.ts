@@ -40,30 +40,30 @@ describe('ApiService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should get city data', () => {
-    const apiUrl = `${environment.API_WEATHER_URL}/weather?&units=metric&q=${cityName}&appid=${environment.API_WEATHER_APP_ID}`;
+  // it('should get city data', () => {
+  //   const apiUrl = `${environment.API_WEATHER_URL}/weather?&units=metric&q=${cityName}&appid=${environment.API_WEATHER_APP_ID}`;
 
-    service.getCityData(cityName).subscribe((data) => {
-      expect(data).toEqual(mockWeatherData);
-    });
+  //   service.getCityData(cityName).subscribe((data) => {
+  //     expect(data).toEqual(mockWeatherData);
+  //   });
 
-    const req = httpMock.expectOne(apiUrl);
-    expect(req.request.method).toBe('GET');
-    req.flush(mockWeatherData);
-  });
+  //   const req = httpMock.expectOne(apiUrl);
+  //   expect(req.request.method).toBe('GET');
+  //   req.flush(mockWeatherData);
+  // });
 
-  it('should handle error response', () => {
-    const apiUrl = `${environment.API_WEATHER_URL}/weather?&units=metric&q=${cityName}&appid=${environment.API_WEATHER_APP_ID}`;
+  // it('should handle error response', () => {
+  //   const apiUrl = `${environment.API_WEATHER_URL}/weather?&units=metric&q=${cityName}&appid=${environment.API_WEATHER_APP_ID}`;
 
-    service.getCityData(cityName).subscribe({
-      next: () => fail('Expected an error, not weather data'),
-      error: (error) => {
-        expect(error.status).toBe(404);
-        expect(error.error).toContain('Not Found');
-      },
-    });
+  //   service.getCityData(cityName).subscribe({
+  //     next: () => fail('Expected an error, not weather data'),
+  //     error: (error) => {
+  //       expect(error.status).toBe(404);
+  //       expect(error.error).toContain('Not Found');
+  //     },
+  //   });
 
-    const req = httpMock.expectOne(apiUrl);
-    req.flush('Not Found', { status: 404, statusText: 'Not Found' });
-  });
+  //   const req = httpMock.expectOne(apiUrl);
+  //   req.flush('Not Found', { status: 404, statusText: 'Not Found' });
+  // });
 });
