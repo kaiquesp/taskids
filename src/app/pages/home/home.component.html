@@ -1,5 +1,7 @@
 <app-header></app-header>
 
+<app-values></app-values>
+
 <app-calendar (dateResponse)="dateResponse($event)"></app-calendar>
 
   @for(el of tasks$ | async; track el) {

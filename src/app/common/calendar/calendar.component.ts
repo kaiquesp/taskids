@@ -1,14 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-
-import { ApiService } from '../../app/api/api.service';
-import { Reminder } from '../../app/interfaces/reminder';
-import { Weather } from '../../app/interfaces/weather';
 import { CalendarModalComponent } from '../calendarmodal/calendarmodal.component';
 import { ModalService } from '../modal/modal.service';
 import { CalendarDay } from './calendarday';
 import { ChunkPipe } from './chuckpipe';
 import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from '../../api/api.service';
+import { Reminder } from '../../interfaces/reminder';
+import { Weather } from '../../interfaces/weather';
 
 @Component({
   standalone: true,
