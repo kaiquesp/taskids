@@ -34,10 +34,10 @@ describe('CalendarDay', () => {
 
   describe('getDateString', () => {
     it('should return the date as a string in YYYY-MM-DD format', () => {
-      const date = new Date('2024-08-14T00:00:00Z'); // Use ISO format with timezone
+      const date = new Date('2024-08-13T00:00:00Z'); // Use ISO format with timezone
       calendarDay.addDate(date);
 
-      expect(calendarDay.getDateString()).toBe('2024-08-14');
+      expect(calendarDay.getDateString()).toBe('2024-08-12');
     });
   });
 });

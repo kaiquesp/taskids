@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
-import { ApiService } from '../../app/api/api.service';
-import { Weather } from '../../app/interfaces/weather';
 import { ModalService } from '../modal/modal.service';
 import { CalendarComponent } from './calendar.component';
+import { ApiService } from '../../api/api.service';
+import { Weather } from '../../interfaces/weather';
 
 describe('CalendarComponent', () => {
   let component: CalendarComponent;
