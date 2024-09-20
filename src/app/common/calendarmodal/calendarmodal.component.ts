@@ -2,8 +2,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
-import { Weather } from '../../app/interfaces/weather';
-import { Reminder } from '../../app/interfaces/reminder';
+import { Weather } from '../../interfaces/weather';
+import { Reminder } from '../../interfaces/reminder';
 
 
 @Component({

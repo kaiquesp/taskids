@@ -2,16 +2,16 @@ import { AsyncPipe, CurrencyPipe, NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, model, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
-
+import { ValuesComponent } from '../../shared/values/values.component';
 import { CalendarComponent } from '../../common/calendar/calendar.component';
-import { ApiService } from '../api/api.service';
-import { ITask } from '../interfaces/tasks';
-import { HeaderComponent } from "../shared/header/header.component";
+import { HeaderComponent } from '../../shared/header/header.component';
+import { ApiService } from '../../api/api.service';
+import { ITask } from '../../interfaces/tasks';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CurrencyPipe, CalendarComponent, FormsModule, ReactiveFormsModule, NgClass, AsyncPipe, HeaderComponent],
+  imports: [CurrencyPipe, CalendarComponent, FormsModule, ReactiveFormsModule, NgClass, AsyncPipe, HeaderComponent, ValuesComponent],
   providers: [ApiService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

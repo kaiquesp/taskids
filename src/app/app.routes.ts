@@ -6,6 +6,6 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.routes').then(r => r.HOME_ROUTES)
+    loadChildren: () => import('./pages/home/home.routes').then(r => r.HOME_ROUTES)
   }
 ];

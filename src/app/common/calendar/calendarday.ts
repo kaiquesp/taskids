@@ -1,4 +1,4 @@
-import { Reminder } from "../../app/interfaces/reminder";
+import { Reminder } from "../../interfaces/reminder";
 
 export class CalendarDay {
   public date?: Date;
